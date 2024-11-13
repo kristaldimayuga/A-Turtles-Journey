@@ -1,5 +1,5 @@
 <p align = "center">
-    <img src="Project_README/card.png" width="500" />
+    <img src="Project_README/card.png" width="500" alt="Turtle's Journey Game Title" />
 </p>
 
 # A Turtle's Journey 🐢
