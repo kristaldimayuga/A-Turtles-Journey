@@ -1,25 +1,28 @@
-package chapter1;
+package Chapter;
 
 import db.DatabaseConnection;
-import game.Game;
-import jdk.jshell.execution.Util;
+import models.Environment;
 import utility.Utility;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Chapter1 {
-    private int playerId;
+public class Chapter1 extends Chapter{
 
     public Chapter1(int playerId) {
-        this.playerId = playerId;
+        super(playerId);
     }
 
+    @Override
     public void start() {
         Utility.typeWriter("\nChapter 1: Birth and Survival", 30);
+
+        Environment costarica = new Environment(null, null, null);
+        costarica.getLocationInfo(1);
+        costarica.displayEnvironmentInfo();
+
         Utility.typeWriter("In a warm sunny day in Costa Rica...", 30);
         Utility.typeWriter("A group of green sea turtles are born.", 30 );
         Utility.typeWriter("The white sand and the sunlight blinds you as you open your eyes...", 30);
@@ -106,7 +109,7 @@ public class Chapter1 {
         } while (choice < 1 || choice > 3);
     }
 
-    private void updateProgress(String state) {
+    public void updateProgress(String state) {
         try (Connection conn = DatabaseConnection.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement(
                     "INSERT INTO Progress (player_id, chapter, progress_state) VALUES (?, ?, ?)"

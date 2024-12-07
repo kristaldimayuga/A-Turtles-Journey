@@ -2,11 +2,11 @@
 package controllers;
 
 import db.Progress;
-import chapter1.Chapter1;
-import chapter2.Chapter2;
-import chapter3.Chapter3;
-import chapter4.Chapter4;
-import chapter5.Chapter5;
+import Chapter.Chapter1;
+import Chapter.Chapter2;
+import Chapter.Chapter3;
+import Chapter.Chapter4;
+import Chapter.Chapter5;
 import game.Game;
 import models.Environment;
 import models.Turtle;
@@ -34,34 +34,34 @@ public class GameFlowControl {
 
         switch (lastChapter) {
             case 1:
-                System.out.println("\nStarting game...\n");
-                System.out.println("\n🐢   🐢   🐢\n");
+                this.greetings();
                 startChapter1();
                 break;
             case 2:
-                System.out.println("\nStarting game...\n");
-                System.out.println("\n🐢   🐢   🐢\n");
+                this.greetings();
                 startChapter2();
                 break;
             case 3:
-                System.out.println("\nStarting game...\n");
-                System.out.println("\n🐢   🐢   🐢\n");
+                this.greetings();
                 startChapter3();
                 break;
             case 4:
-                System.out.println("\nStarting game...\n");
-                System.out.println("\n🐢   🐢   🐢\n");
+                this.greetings();
                 startChapter4();
                 break;
             case 5:
-                System.out.println("\nStarting game...\n");
-                System.out.println("\n🐢   🐢   🐢\n");
+                this.greetings();
                 startChapter5();
                 break;
             default:
                 new Game(playerId).startNewGame(); // This will now resolve correctly
                 break;
         }
+    }
+
+    private void greetings() {
+        System.out.println("\nStarting game...\n");
+        System.out.println("\n🐢   🐢   🐢\n");
     }
 
     private void startChapter1() {
@@ -180,5 +180,6 @@ public class GameFlowControl {
         chapter5.start();
         System.out.println("Proceeding to Chapter 5...");
     }
+
 
 }

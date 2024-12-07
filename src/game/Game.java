@@ -2,11 +2,11 @@
 package game;
 
 import menu.MainMenu;
-import chapter1.Chapter1;
-import chapter2.Chapter2;
-import chapter3.Chapter3;
-import chapter4.Chapter4;
-import chapter5.Chapter5;
+import Chapter.Chapter1;
+import Chapter.Chapter2;
+import Chapter.Chapter3;
+import Chapter.Chapter4;
+import Chapter.Chapter5;
 import utility.Utility;
 
 public class Game {
