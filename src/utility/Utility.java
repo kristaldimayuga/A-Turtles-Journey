@@ -1,4 +1,3 @@
-// File: utility/Utility.java
 package utility;
 
 import java.util.Scanner;
@@ -33,7 +32,7 @@ public class Utility {
     }
 
     public static void pressEnter() {
-        System.out.print("Press 'Enter' to continue...");
+        System.out.print("\nPress 'Enter' to continue...");
         scanner.nextLine();
     }
 

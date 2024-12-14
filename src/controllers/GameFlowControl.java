@@ -1,18 +1,16 @@
-//File: controllers/GameFlowControl
 package controllers;
 
 import db.Progress;
-import Chapter.Chapter1;
-import Chapter.Chapter2;
-import Chapter.Chapter3;
-import Chapter.Chapter4;
-import Chapter.Chapter5;
-import game.Game;
+import chapter.Chapter1;
+import chapter.Chapter2;
+import chapter.Chapter3;
+import chapter.Chapter4;
+import chapter.Chapter5;
 import models.Environment;
 import models.Turtle;
 
-import static game.Game.askToContinue;
-import static game.Game.returnToMainMenu;
+import static controllers.Game.askToContinue;
+import static controllers.Game.returnToMainMenu;
 
 
 public class GameFlowControl {

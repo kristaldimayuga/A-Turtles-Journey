@@ -1,12 +1,11 @@
-// File: game/Game.java
-package game;
+package controllers;
 
 import menu.MainMenu;
-import Chapter.Chapter1;
-import Chapter.Chapter2;
-import Chapter.Chapter3;
-import Chapter.Chapter4;
-import Chapter.Chapter5;
+import chapter.Chapter1;
+import chapter.Chapter2;
+import chapter.Chapter3;
+import chapter.Chapter4;
+import chapter.Chapter5;
 import utility.Utility;
 
 public class Game {
@@ -64,7 +63,7 @@ public class Game {
 
     public static boolean askToContinue() {
         while (true) {
-            Utility.typeWriter("Would you like to continue to the next chapter? (Y/N): ", 30);
+            Utility.typeWriter("\n\n[❓] Would you like to continue to the next chapter? (Y/N): ", 30);
             char choice = Utility.charScanner('Y', 'N');
             if (choice == 'Y') {
                 return true;
@@ -77,7 +76,8 @@ public class Game {
     }
 
     public static void returnToMainMenu() {
-        Utility.typeWriter("Returning to the main menu...\n", 30);
+        Utility.typeWriter("\nReturning to the main menu...\n", 30);
+        Utility.typeWriter("\n🐢   🐢   🐢\n", 30);
         MainMenu.displayMenu();
     }
 }

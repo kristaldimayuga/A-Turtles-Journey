@@ -1,4 +1,3 @@
-// File: db/DatabaseConnection.java
 package db;
 
 import java.sql.Connection;

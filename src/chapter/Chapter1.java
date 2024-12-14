@@ -1,8 +1,10 @@
-package Chapter;
+package chapter;
 
 import db.DatabaseConnection;
 import models.Environment;
 import utility.Utility;
+import models.Turtle;
+import models.Obstacle;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +19,10 @@ public class Chapter1 extends Chapter{
 
     @Override
     public void start() {
-        Utility.typeWriter("\nChapter 1: Birth and Survival", 30);
+        Utility.typeWriter("-".repeat(50), 30);
+        Utility.typeWriter("\nChapter 1: Birth and Survival\n", 30);
+        Utility.typeWriter("-".repeat(50), 30);
+
 
         Environment costarica = new Environment(null, null, null);
         costarica.getLocationInfo(1);
@@ -44,12 +49,20 @@ public class Chapter1 extends Chapter{
         Utility.typeWriter("\nAs you swim towards the waves, you suddenly notice a shadow passing overhead...", 30);
         Utility.typeWriter("A seagull swoops down, targeting you and your fellow baby turtles!", 30);
 
+        // Load and display the obstacle
+        Obstacle seagull = new Obstacle(1); // ID of the seagull hazard in the database
+        seagull.loadHazards();
+        seagull.displayHazards();
+
         // Escape the seagull
         Utility.typeWriter("QUICK! TURN RIGHT! (D)" , 0);
         Utility.charScanner('D', 'd');
 
         Utility.typeWriter("TURN LEFT! (A)" , 0);
         Utility.charScanner('A', 'a');
+
+        // Affect the turtle's health if hit
+        seagull.afterHazards(new Turtle(playerId));
 
         Utility.typeWriter("\nYou frantically paddle, trying to escape, you swim into the waves to save yourself.", 30);
         Utility.pressEnter();

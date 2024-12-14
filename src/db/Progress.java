@@ -1,4 +1,3 @@
-// File: db/Progress.java
 package db;
 
 import java.sql.Connection;

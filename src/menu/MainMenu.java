@@ -2,7 +2,7 @@
 package menu;
 
 import java.util.Scanner;
-import game.Game;
+import controllers.Game;
 import db.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

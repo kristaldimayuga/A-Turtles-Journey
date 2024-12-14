@@ -1,4 +1,3 @@
-// File: events/Quiz
 package events;
 
 import db.DatabaseConnection;

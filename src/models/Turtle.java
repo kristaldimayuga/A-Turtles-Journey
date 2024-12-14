@@ -1,4 +1,3 @@
-// File: models/Turtle
 package models;
 
 import db.DatabaseConnection;
@@ -15,9 +14,6 @@ public class Turtle {
     private String name; // This is the turtle's name.
     private int age;
     private int health;
-    private int level;
-    private int lifePoints;
-    private List<String> friends;
     private List<String> items;
     private int playerId; // This will store the playerId to fetch the turtle's name from the database.
 
@@ -26,9 +22,6 @@ public class Turtle {
         this.playerId = playerId;
         this.age = 1;
         this.health = 100;
-        this.level = 1;
-        this.lifePoints = 0;
-        this.friends = new ArrayList<>();
         this.items = new ArrayList<>();
     }
 
@@ -38,35 +31,10 @@ public class Turtle {
         Utility.typeWriter("You obtain a " + itemName + " and added it to the inventory.", 30);
     }
 
-    // Level-up method
-    public void levelUp() {
-        level++;
-        lifePoints += 5;
-        Utility.typeWriter(name + " has leveled up! Level: " + level, 30);
-    }
-
     // Method to age up (for example, after significant events)
     public void ageUp(int points) {
         age += points;
         Utility.typeWriter(name + " ages up and is now " + age + " years old.", 30);
-    }
-
-    // Increase health with bounds check
-    public void increaseHealth(int increment) {
-        health = Math.min(health + increment, 100);  // Max health is 100
-        Utility.typeWriter(name + "'s health is now " + health + "%.", 30);
-    }
-
-    // Decrease health and handle possible consequences
-    public void decreaseHealth(int decrement) {
-        health -= decrement;
-        if (health <= 0) {
-            health = 0;
-            Utility.typeWriter(name + " has lost all health and needs to restart the current challenge.", 30);
-            // Possible restart logic for game challenges here
-        } else {
-            Utility.typeWriter(name + "'s health dropped to " + health + "%.", 30);
-        }
     }
 
     // Fetch turtle name from the database based on playerId
@@ -85,15 +53,6 @@ public class Turtle {
         }
     }
 
-    // Display turtle name
-    public void displayTurtleName() {
-        if (name != null) {
-            System.out.println("Turtle Name: " + name);
-        } else {
-            System.out.println("Turtle name not set.");
-        }
-    }
-
     // Getters and Setters
     public int getHealth() {
         return health;
@@ -103,20 +62,8 @@ public class Turtle {
         this.health = health;
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getName() {

@@ -1,4 +1,4 @@
-package Chapter;
+package chapter;
 
 public abstract class Chapter {
     public int playerId;
