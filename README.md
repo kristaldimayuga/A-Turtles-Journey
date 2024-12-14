@@ -119,32 +119,34 @@ The game addresses the following SDGs:
 
 ## 📂 File Structure
 ```
-├── src
-│   ├── chapter
-│   │   ├── Chapter.java
-│   │   ├── Chapter1.java
-│   │   ├── Chapter2.java
-│   │   ├── Chapter3.java
-│   │   ├── Chapter4.java
-│   │   └── Chapter5.java
-│   ├── controllers
-│   │   ├── Game.java
-│   │   └── GameFlowControl.java
-│   ├── db
-│   │   ├── DatabaseConnection.java
-│   │   └── Progress.java
-│   ├── events
-│   │   ├── EdibleOrNotGame.java
-│   │   └── Quiz.java
-│   ├── menu
-│   │   └── MainMenu.java
-│   ├── models
-│   │   ├── Environment.java
-│   │   ├── MarineLife.java
-│   │   ├── Obstacle.java
-│   │   └── Turtle.java
-│   └── utility
-│       └── Utility.java
+src
+├── Main.java
+├── chapter
+│   ├── Chapter.java
+│   ├── Chapter1.java
+│   ├── Chapter2.java
+│   ├── Chapter3.java
+│   ├── Chapter4.java
+│   └── Chapter5.java
+├── controllers
+│   ├── Game.java
+│   └── GameFlowControl.java
+├── db
+│   ├── DatabaseConnection.java
+│   └── Progress.java
+├── events
+│   ├── EdibleOrNotGame.java
+│   └── Quiz.java
+├── menu
+│   └── MainMenu.java
+├── models
+│   ├── Environment.java
+│   ├── MarineLife.java
+│   ├── Obstacle.java
+│   └── Turtle.java
+└── utility
+    └── Utility.java
+
 ```
 
 
