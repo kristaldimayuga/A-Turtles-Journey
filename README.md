@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="Project_README/banner_animated.gif" width="500" alt="Turtle's Journey Game Title" />
+    <img src="Project_README/banner_animated.gif" alt="Turtle's Journey Game Title" />
 </p>
 
 # A Turtle's Journey 🐢
@@ -295,5 +295,5 @@ public class Chapter1 extends Chapter {
 
 ### 🧑‍💻 Project Developer
 <p align="center">
-    <img src="Project_README/prdev.gif" width="500" alt="Turtle's Journey Game Title" />
+    <img src="Project_README/prdev.gif" alt="Turtle's Journey Game Title" />
 </p>
