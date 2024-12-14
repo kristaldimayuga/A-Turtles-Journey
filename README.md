@@ -9,20 +9,20 @@
 
 ## Contents
 - [Project Overview](#-project-overview)
-  - [Objectives](#objectives)
-  - [Sustainable Development Goals (SDGs)](#sustainable-development-goals-sdgs)
-    - [SDG Application](#-sdg-applicationg)
+  - [Objectives](#-objectives)
+  - [Sustainable Development Goals (SDGs)](#-sustainable-development-goals-sdgs)
+    - [SDG Application](#sdg-application)
   - [Usage Guidelines](#-usage-guidelines)
 - [Project Development](#-project-development)
   - [Technical Solution Framework](#-technical-solution-framework)
   - [Project Deliverables](#-project-deliverables)
   - [Main Components](#main-components)
-  - [Classes](#classes)
+  - [Classes](#-classes)
 - [Object-Oriented Programming Application Principles](#-oop-application-principles)
-  - [Encapsulation](#encapsulation)
-  - [Inheritance](#inheritance)
-  - [Polymorphism](#polymorphism)
-  - [Abstraction](#abstraction)
+  - [Encapsulation](#1-encapsulation)
+  - [Inheritance](#2-inheritance)
+  - [Polymorphism](#3-polymorphism)
+  - [Abstraction](#4-abstraction)
 - [Project Developer](#-project-developer)
 
 ---
