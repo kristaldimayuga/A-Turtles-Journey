@@ -74,7 +74,6 @@ INSERT INTO progress (player_id, chapter, progress_state) VALUES
 (2, 1, 'completed');
 
 -- Insert initial data into characters
--- Insert initial data into characters
 INSERT INTO characters (chapterAppearance, name, species, classification, kind, relationship, location, story, educationalFact) VALUES
 (1, 'Turtle', 'Green Sea Turtle', 'Animal', 'None', 'None', 'None', 'A green sea turtle who embarks on an adventure to find the island of the Bahamas.', 'Green sea turtles are known for their gentle nature, often migrating long distances between feeding grounds and nesting sites. They have a unique greenish-colored fat under their shell, which gives them their name. Green sea turtles can live up to 80 years and are primarily herbivorous.'),
 (2, 'Jake', 'Loggerhead Sea Turtle', 'Reptile', 'Best Friend', 'Open ocean', 'Jake, the turtle\'s best friend, was separated from his siblings when a group of fishermen captured them to sell as pets.', 'Loggerhead sea turtles have large heads and powerful jaws, which help them feed on hard-shelled prey. They are known for their resilience and are often seen swimming long distances in the open ocean. Loggerheads are endangered, largely due to human activities such as fishing and pollution.'),
