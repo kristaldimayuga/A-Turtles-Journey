@@ -1,28 +1,30 @@
 <p align="center">
-    <img src="Project_README/banner_animated.gif" alt="Turtle's Journey Game Title" />
+    <img src="Project_README/banner.gif" alt="Turtle's Journey Game Title" />
 </p>
 
 # A Turtle's Journey 🐢
 *An adventure to protect marine life and learn about the wonders of the ocean!*
-
-*A Turtle's Journey* is an immersive Java-based console game that blends interactive storytelling, educational challenges, and ocean conservation, inspired by *A Turtle’s Tale: Sammy’s Adventures (2010)*. Players navigate a young sea turtle's perilous journey across the ocean, engaging with marine ecosystems while promoting awareness of ocean health and sustainability.
 
 ## Contents
 - [Project Overview](#-project-overview)
   - [Objectives](#-objectives)
   - [Sustainable Development Goals (SDGs)](#-sustainable-development-goals-sdgs)
     - [SDG Application](#sdg-application)
-  - [Usage Guidelines](#-usage-guidelines)
 - [Project Development](#-project-development)
   - [Technical Solution Framework](#-technical-solution-framework)
-  - [Project Deliverables](#-project-deliverables)
-  - [Main Components](#main-components)
+  - [Usage Guidelines](#-usage-guidelines)
+  - [Project Deliverables & Main Components](#-project-deliverables--main-components)
   - [Classes](#-classes)
 - [Object-Oriented Programming Application Principles](#-oop-application-principles)
   - [Encapsulation](#1-encapsulation)
   - [Inheritance](#2-inheritance)
   - [Polymorphism](#3-polymorphism)
   - [Abstraction](#4-abstraction)
+- [CRUD Operations Applications](#-crud-operations-applications)
+  - [Create](#1-create)
+  - [Read](#2-read)
+  - [Update](#3-update)
+  - [Delete](#4-delete)
 - [Project Developer](#-project-developer)
 
 ---
@@ -56,22 +58,6 @@ The game addresses the following SDGs:
 | **SDG 4: Quality Education**        | Promotes awareness through interactive learning and informative quizzes.    |
 | **SDG 14: Life Below Water**        | Highlights marine conservation and addresses ocean pollution challenges.    |
 | **SDG 17: Partnerships for the Goals** | Encourages collaboration for global environmental advocacy.                 |
-
-### SDG Application
-- Educating players on **marine biodiversity** and the impacts of pollution and habitat destruction.
-- Promoting conservation practices through game content inspired by real-world environmental challenges.
-- Encouraging players to reflect on their role in protecting marine ecosystems.
-
----
-
-## 📖 Usage Guidelines
-1. **Start the Game** 🐢 - Launch the game and dive into the ocean!
-2. **Make an account** 🧾 - Enter your `username` and generate your `player_id`
-3. **Interact with Characters** 🐠 - Meet friends like Jake the loggerhead turtle and Oscar the octopus.
-4. **Solve Challenges & Quizzes** 🎮 - Complete mini-games to progress and learn fascinating facts.
-5. **Track Your Journey** 📈 - Save your progress as you help the turtle overcome ocean hazards.
-6. **Have Fun & Learn** 🌍 - Explore the underwater world while gaining insights into ocean conservation.
-
 ---
 
 ## 💻 Project Development
@@ -86,18 +72,20 @@ The game addresses the following SDGs:
 
 ---
 
-## 📦 Project Deliverables
-- **Interactive Storyline**: Progress through chapters with marine friends and challenges. Comprised of five chapters and at least 20 mins of playtime. 
-- **Educational Mini-Games**: Learn through quizzes, challenges, and trivia.
-- **Database Integration**: Detailed profiles of `characters`,`location`,`obstacle`,`players`, `progress`, and mini-games stored in the `TurtleOceanJourney` database.
-- **Save/Load Feature**: Track player progress for continued gameplay.
-- **Typed Text Effect**: Enjoy retro-style text animations for immersive storytelling.
+## **📖 Usage Guidelines**
+1. **Start Your Adventure** - Launch the game, create an account, and get your unique `player_id`.
+2. **Explore the Ocean** - Interact with marine characters like Jake the loggerhead turtle and Oscar the octopus.
+3. **Solve & Progress** - Complete quizzes, mini-games, and challenges to unlock new chapters.
+4. **Save & Track** - Save your progress and continue your journey anytime.
+5. **Learn & Enjoy** - Immerse yourself in the underwater world while gaining insights into ocean conservation.
 
-### **Main Components**:
-- **Game Flow Control** 🎮 - Handles story progression and event management.
-- **Database Integration** 📊 - Efficiently stores and retrieves game data.
-- **Console UI** 🎨 - Interactive menus, text effects, and engaging visuals.
-
+## **📦 Project Deliverables & Main Components**
+- **Interactive Storyline**: A five-chapter adventure with engaging characters, challenges, and 20+ minutes of gameplay.
+- **Educational Mini-Games**: Trivia, quizzes, and challenges that promote learning about marine life.
+- **Database Integration**: Efficient storage of player data, character profiles, and progress in the `TurtleOceanJourney` database.
+- **Save/Load System**: Seamless tracking and resumption of player progress.
+- **Game Flow Control**: Manages story progression, mini-games, and interactions.
+- **Immersive Console UI**: Retro-style typed text effects and visually engaging menus.
 ---
 
 ## 📌 Classes
@@ -152,7 +140,7 @@ src
 
 ---
 
-## 🏗️ OOP Application Principles
+##  ⚙️ OOP Application Principles
 This project demonstrates **Object-Oriented Programming (OOP)** principles in various components of the game. Below are examples showcasing each principle with relevant **code snippets** directly from the project.
 
 ---
@@ -295,7 +283,79 @@ public class Chapter1 extends Chapter {
 
 ---
 
+## 📃 CRUD Operations Applications
+### **1. Create**
+The Create operation is used when initializing new game data or inserting new player information into the database.
+
+**Example:**
+```java
+PreparedStatement stmt = conn.prepareStatement(
+    "INSERT INTO Players (username) VALUES (?)",
+    PreparedStatement.RETURN_GENERATED_KEYS
+);
+stmt.setString(1, username);
+stmt.executeUpdate();
+```
+- **Purpose:** When starting a new game, this code adds a new player to the `Players` table and generates a unique `player_id`.
+- **Related Class/Method:** `newGame()` method in `MainMenu`.
+
+### **2. Read**
+The Read operation is used to fetch data from the database, such as retrieving saved progress, loading player information, or displaying chapter details.
+
+**Example:**
+```java
+PreparedStatement stmt = conn.prepareStatement(
+    "SELECT * FROM Players WHERE player_id = ?"
+);
+stmt.setInt(1, playerId);
+ResultSet rs = stmt.executeQuery();
+```
+- **Purpose:** Reads player information to validate their existence or fetch data about their progress.
+```java
+MarineLife julia = new MarineLife(null, null, null, null, null, null, null);
+julia.getCharacterInfo(6); // Reads data from the database
+julia.displayCharacterInfo(); // Displays the fetched data
+```
+- **Purpose:** Retrieves information about specific marine life characters from the database and displays it to the console.
+- **Related Class/Method:** Methods like `getCharacterInfo()` in the `MarineLife` class and queries in `loadGame()`.
+
+### **3. Update**
+The Update operation is used to modify existing data in the database, such as updating the player's progress or game state.
+**Example:**
+```java
+PreparedStatement stmt = conn.prepareStatement(
+    "UPDATE Progress SET chapter = ?, progress_state = ? WHERE player_id = ?"
+);
+stmt.setInt(1, nextChapter);
+stmt.setString(2, "In Progress");
+stmt.setInt(3, playerId);
+stmt.executeUpdate();
+```
+- **Purpose:** Updates the player's current chapter and progress state in the `Progress` table after completing a chapter or significant game event.
+- **Related Class/Method:** Methods in `GameFlowControl` or chapter transition logic.
+
+### **4. Delete**
+The Delete operation is used to remove player data from the database, such as resetting progress or deleting player accounts.
+**Example:**
+```java
+PreparedStatement deleteProgressStmt = conn.prepareStatement(
+    "DELETE FROM Progress WHERE player_id = ?"
+);
+deleteProgressStmt.setInt(1, playerId);
+deleteProgressStmt.executeUpdate();
+```
+```java
+PreparedStatement deletePlayerStmt = conn.prepareStatement(
+        "DELETE FROM Players WHERE player_id = ?"
+);
+deletePlayerStmt.setInt(1, playerId);
+deletePlayerStmt.executeUpdate();
+```
+- **Purpose:** Removes all associated data for a specific player, including their progress and personal details, when they choose to reset the game.
+- **Related Class/Method:** `deleteProgress()` in `MainMenu`.
+
+---
 ### 🧑‍💻 Project Developer
 <p align="center">
-    <img src="Project_README/prdev.gif" alt="Turtle's Journey Game Title" />
+    <img src="Project_README/footer.gif" alt="Turtle's Journey Game Title" />
 </p>
