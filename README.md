@@ -304,11 +304,19 @@ The Read operation is used to fetch data from the database, such as retrieving s
 
 **Example:**
 ```java
-PreparedStatement stmt = conn.prepareStatement(
-    "SELECT * FROM Players WHERE player_id = ?"
-);
-stmt.setInt(1, playerId);
-ResultSet rs = stmt.executeQuery();
+String query = "SELECT * FROM characters WHERE character_id=?";
+            PreparedStatement stm = conn.prepareStatement(query);
+            stm.setInt(1, characterId);
+            ResultSet rs = stm.executeQuery();
+
+            if (rs.next()) {
+                this.name = rs.getString("name");
+                this.species = rs.getString("species");
+                this.classification = rs.getString("classification");
+                this.kind = rs.getString("kind");
+                this.relationship = rs.getString("relationship");
+                this.location = rs.getString("location");
+                this.educationalFact = rs.getString("educationalFact");
 ```
 - **Purpose:** Reads player information to validate their existence or fetch data about their progress.
 ```java
@@ -324,12 +332,12 @@ The Update operation is used to modify existing data in the database, such as up
 **Example:**
 ```java
 PreparedStatement stmt = conn.prepareStatement(
-    "UPDATE Progress SET chapter = ?, progress_state = ? WHERE player_id = ?"
-);
-stmt.setInt(1, nextChapter);
-stmt.setString(2, "In Progress");
-stmt.setInt(3, playerId);
-stmt.executeUpdate();
+                    "INSERT INTO Progress (player_id, chapter, progress_state) VALUES (?, ?, ?)"
+            );
+            stmt.setInt(1, playerId);
+            stmt.setInt(2, 1); // Chapter 1
+            stmt.setString(3, state);
+            stmt.executeUpdate();
 ```
 - **Purpose:** Updates the player's current chapter and progress state in the `Progress` table after completing a chapter or significant game event.
 - **Related Class/Method:** Methods in `GameFlowControl` or chapter transition logic.
